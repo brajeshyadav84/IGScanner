@@ -146,7 +146,21 @@ h1 {
     color: #0b74e0 !important;
 }
 
+.tab-nav {
+    background-color: orange !important;
+}
 
+.bar-header {
+    background-color: orange !important;
+}
+
+.tab-title {
+    color: white !important;
+}
+
+.header-item {
+    color: white !important;
+}
 
 
 
