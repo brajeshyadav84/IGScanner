@@ -65,16 +65,17 @@ angular.module('starter.controllers', [])
     };
 
     $scope.detailsHandler = function (data) {
-        $state.go('tab.chat-detail', data);
+        $state.go('tab.chat-detail', {"data": data});
     }
 
     
 
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams) {
   console.log($stateParams.data);
   //$scope.chat = Chats.get();
+  $scope.scanDetails = $stateParams.data;
 })
 
 .controller('AccountCtrl', function($scope) {
