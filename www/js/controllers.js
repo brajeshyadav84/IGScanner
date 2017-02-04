@@ -63,9 +63,14 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
     $scope.chats = JSON.parse(localStorage.getItem("LocalData"));
-    console.log("$scope.chats :: "+$scope.chats);
+    if($scope.chats.length > 0) {
+        console.log("$scope.chats :: "+$scope.chats);
+        $scope.isDataAvailable = false;
+    } else {
+        $scope.isDataAvailable = true;
+    }
+    
     
     $scope.remove = function(id) {
       //$scope.chats.remove(chat);

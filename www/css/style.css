@@ -166,6 +166,15 @@ h1 {
     text-transform: capitalize;
 }
 
+.noData {
+    height: 50%;
+    width: 100%;
+    margin-top: 35%;
+    font-size: 30px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
 
 
 
