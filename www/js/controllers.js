@@ -21,6 +21,9 @@ angular.module('starter.controllers', [])
                         //{
                             navigator.notification.prompt("Please enter name of data",  function(input){
                                 var name = input.input1;
+                                if(result.format != "QR_CODE") {
+                                    name = "Product"
+                                }
                                 var details = result.text;
 
                                 var data = localStorage.getItem("LocalData");
@@ -76,8 +79,15 @@ angular.module('starter.controllers', [])
   console.log($stateParams.name);
   //$scope.chat = Chats.get();
   $scope.name = $stateParams.name;
-  $scope.details = $stateParams.details;
-
+  if($scope.name == "Product") {
+      $scope.btnText = "Web Search";
+      $scope.details = "https://www.google.co.in/#q="+$stateParams.details;
+  } else {
+      $scope.btnText = "Open URL";
+      $scope.details = $stateParams.details;
+  }
+  
+  //$scope.$apply();
   $scope.openURL = function () {
         window.open($scope.details, '_system');
   };

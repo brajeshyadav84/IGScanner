@@ -103,6 +103,9 @@ h1 {
     background-color: orange;
     margin-top: 35%;
     border-radius: 21px;
+    background-image: url('https://maxcdn.icons8.com/Color/PNG/512/Ecommerce/barcode_scanner-512.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .detail-container {
@@ -160,6 +163,7 @@ h1 {
 
 .header-item {
     color: white !important;
+    text-transform: capitalize;
 }
 
 

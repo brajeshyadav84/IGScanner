@@ -3,8 +3,8 @@
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="data in chats" type="item-text-wrap">
         <div ng-click="detailsHandler(data)">
-          <h2>{{data.name}}</h2>
-          <p class="wraptext">{{data.details}}</p>
+          <h2 style="text-transform: capitalize;">{{data.name}}</h2>
+          <p class="wraptext" style="text-transform: lowercase;">{{data.details}}</p>
           <i class="icon ion-chevron-right icon-accessory"></i>
         </div>
         <ion-option-button class="button-assertive" ng-click="remove(data)">
