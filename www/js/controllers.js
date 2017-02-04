@@ -29,7 +29,11 @@ angular.module('starter.controllers', [])
                                 var data = localStorage.getItem("LocalData");
                                 console.log(data);
                                 data = JSON.parse(data);
-                                data[data.length] = {name, details};
+                                var id = data.length;
+                                if(id > 3){
+                                  data.splice(0, 1);
+                                }
+                                data[data.length] = { id, name, details};
 
                                 localStorage.setItem("LocalData", JSON.stringify(data));
                                 $scope.isScan = false;
@@ -63,8 +67,13 @@ angular.module('starter.controllers', [])
     $scope.chats = JSON.parse(localStorage.getItem("LocalData"));
     console.log("$scope.chats :: "+$scope.chats);
     
-    $scope.remove = function(chat) {
-      $scope.chats.remove(chat);
+    $scope.remove = function(id) {
+      //$scope.chats.remove(chat);
+      console.log(id);
+      var id = id - 1;
+      $scope.chats.splice(id, 1);
+      localStorage.setItem("LocalData", JSON.stringify($scope.chats));
+
     };
 
     $scope.detailsHandler = function (data) {
