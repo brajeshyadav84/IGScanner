@@ -9,6 +9,16 @@ angular.module('starter.controllers', [])
         localStorage.setItem("LocalData", data);
     }
 
+    if(!!localStorage.getItem("SettingData")) {
+        var settings = {
+            disableSuccessBeep: true,
+            disableAnimations: true,
+            torchOn: true,
+            preferFrontCamera: false
+        };
+        localStorage.setItem("SettingData", JSON.stringify(settings));
+    }
+
     $scope.isScan = true;
 
     $scope.scan  = function() {
@@ -45,6 +55,18 @@ angular.module('starter.controllers', [])
                 },
                 function (error) {
                     alert("Scanning failed: " + error);
+                },
+                {
+                    preferFrontCamera : false, // iOS and Android
+                    showFlipCameraButton : true, // iOS and Android
+                    showTorchButton : true, // iOS and Android
+                    torchOn: false, // Android, launch with the torch switched on (if available)
+                    // prompt : "Place a barcode inside the scan area", // Android
+                    // resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                    // formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+                    // orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+                    disableAnimations : true, // iOS
+                    disableSuccessBeep: false // iOS
                 }
            );
     };
@@ -109,7 +131,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SettingsCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+  if(localStorage.getItem("SettingData") != null) {
+      var settings = [];
+      settings = JSON.parse(localStorage.getItem("SettingData"));
+      $scope.settings = {
+          disableSuccessBeep: settings.disableSuccessBeep,
+          disableAnimations: settings.disableAnimations,
+          torchOn: settings.torchOn,
+          preferFrontCamera: settings.preferFrontCamera
+      };
+  }
 });

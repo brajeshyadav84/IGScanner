@@ -1,9 +1,18 @@
 <ion-view view-title="settings">
-  <ion-content>
+  <ion-content class="capitalize-text">
     <ion-list>
-    <!-- <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle> -->
+    <ion-toggle  ng-model="settings.disableSuccessBeep">
+        Beep
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.disableAnimations">
+        Animations
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.torchOn">
+        Torch
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.preferFrontCamera">
+        Use Front Camera
+    </ion-toggle>
     </ion-list>
   </ion-content>
 </ion-view>
