@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
                                 console.log(data);
                                 data = JSON.parse(data);
                                 var id = data.length;
-                                if(id > 3){
+                                if(id > 20){
                                   data.splice(0, 1);
                                 }
                                 data[data.length] = { id, name, details};
