@@ -75,12 +75,12 @@ angular.module('starter.controllers', [])
     };
 
     $scope.openURL = function () {
-        window.open($scope.scanURL, '_system');
+        window.open($scope.scanURL , '_system');
     };
 
     $scope.shareURL = function () {
-        $cordovaSocialSharing.share('QR and BarCode scanner ', 'IGScanner', null, $scope.scanURL);
-    }
+        $cordovaSocialSharing.share('URL - ', 'IGScanner', null, $scope.scanURL);
+    };
 
 
 })
@@ -133,11 +133,11 @@ angular.module('starter.controllers', [])
   
   //$scope.$apply();
   $scope.openURL = function () {
-        window.open($scope.details, '_system');
+        window.open($scope.details , '_system');
   };
 
   $scope.shareURL = function () {
-      $cordovaSocialSharing.share('QR and BarCode scanner ', 'IGScanner', null, $scope.scanURL);
+      $cordovaSocialSharing.share($scope.name + ' URL - ', 'IGScanner', null, $scope.details);
   }
 
 })
