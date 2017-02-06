@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $cordovaSocialSharing) {
 
     //initialize
     if(localStorage.getItem("LocalData") == null) {
@@ -76,7 +76,12 @@ angular.module('starter.controllers', [])
 
     $scope.openURL = function () {
         window.open($scope.scanURL, '_system');
+    };
+
+    $scope.shareURL = function () {
+        $cordovaSocialSharing.share('QR and BarCode scanner ', 'IGScanner', null, $scope.scanURL);
     }
+
 
 })
 
@@ -114,7 +119,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HistoryDetailCtrl', function($scope, $stateParams) {
+.controller('HistoryDetailCtrl', function($scope, $stateParams, $cordovaSocialSharing) {
   console.log($stateParams.name);
   //$scope.chat = Chats.get();
   $scope.name = $stateParams.name;
@@ -130,6 +135,10 @@ angular.module('starter.controllers', [])
   $scope.openURL = function () {
         window.open($scope.details, '_system');
   };
+
+  $scope.shareURL = function () {
+      $cordovaSocialSharing.share('QR and BarCode scanner ', 'IGScanner', null, $scope.scanURL);
+  }
 
 })
 
