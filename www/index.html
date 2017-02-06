@@ -27,6 +27,7 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/vendor/ng-cordova.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
@@ -35,6 +36,73 @@
     <script src="js/services.js"></script>
   </head>
   <body ng-app="starter">
+
+  <script>
+    function onDocLoad() {
+        if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
+            document.addEventListener('deviceready', initApp, false);
+        } else {
+            initApp();
+        }
+    }
+    
+    function initApp() {
+        initAd();
+        // display the banner at startup
+        window.plugins.AdMob.createBannerView();
+      
+        // display the interstitial at startup
+        //window.plugins.AdMob.createInterstitialView();
+    }
+    function initAd(){
+        if ( window.plugins && window.plugins.AdMob ) {
+          var ad_units = {
+        ios : {
+          banner: 'ca-app-pub-9547390959473673/4251435942',
+          interstitial: 'ca-app-pub-9547390959473673/4251435942'
+        },
+        android : {
+          banner: 'ca-app-pub-9547390959473673/6210153946',
+          interstitial: 'ca-app-pub-9547390959473673/6210153946'
+        }
+          };
+          var admobid = "";
+          if( /(android)/i.test(navigator.userAgent) ) {
+            admobid = ad_units.android;
+          } else if(/(iphone|ipad)/i.test(navigator.userAgent)) {
+            admobid = ad_units.ios;
+          } else {
+            admobid = ad_units.wp8;
+          }
+            window.plugins.AdMob.setOptions( {
+                publisherId: admobid.banner,
+                interstitialAdId: admobid.interstitial,
+                bannerAtTop: false, // set to true, to put banner at top
+                overlap: false, // set to true, to allow banner overlap webview
+                offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+                isTesting: true, // receiving test ad
+                autoShow: true // auto show interstitial ad when loaded
+            });
+            registerAdEvents();
+            
+        } else {
+            //alert( 'admob plugin not ready' );
+        }
+    }
+  // optional, in case respond to events
+    function registerAdEvents() {
+      document.addEventListener('onReceiveAd', function(){});
+        document.addEventListener('onFailedToReceiveAd', function(data){});
+        document.addEventListener('onPresentAd', function(){});
+        document.addEventListener('onDismissAd', function(){ });
+        document.addEventListener('onLeaveToAd', function(){ });
+        document.addEventListener('onReceiveInterstitialAd', function(){ });
+        document.addEventListener('onPresentInterstitialAd', function(){ });
+        document.addEventListener('onDismissInterstitialAd', function(){ });
+    }
+    
+  </script>
+
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
