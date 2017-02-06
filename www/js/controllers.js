@@ -144,4 +144,9 @@ angular.module('starter.controllers', [])
           preferFrontCamera: settings.preferFrontCamera
       };
   //}
+
+  $scope.settingHandler = function(){
+       localStorage.setItem("SettingData", JSON.stringify($scope.settings));
+  }
+
 });
