@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
     if(localStorage.getItem("SettingData") == null) {
         var settings = {
-            disableSuccessBeep: true,
+            disableSuccessBeep: false,
             disableAnimations: true,
             torchOn: false,
             preferFrontCamera: false
