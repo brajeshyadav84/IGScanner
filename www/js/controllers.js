@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
         var settings = {
             disableSuccessBeep: true,
             disableAnimations: true,
-            torchOn: true,
+            torchOn: false,
             preferFrontCamera: false
         };
         localStorage.setItem("SettingData", JSON.stringify(settings));
