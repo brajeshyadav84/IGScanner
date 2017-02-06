@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
         localStorage.setItem("LocalData", data);
     }
 
-    if(!!localStorage.getItem("SettingData")) {
+    if(localStorage.getItem("SettingData") == null) {
         var settings = {
             disableSuccessBeep: true,
             disableAnimations: true,
