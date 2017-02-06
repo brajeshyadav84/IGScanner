@@ -22,6 +22,9 @@ angular.module('starter.controllers', [])
     $scope.isScan = true;
 
     $scope.scan  = function() {
+            var settingData = localStorage.getItem("SettingData");
+            settingData = JSON.parse(settingData);
+
             cordova.plugins.barcodeScanner.scan(
                 function (result) {
                     if(!result.cancelled)
@@ -57,16 +60,16 @@ angular.module('starter.controllers', [])
                     alert("Scanning failed: " + error);
                 },
                 {
-                    preferFrontCamera : false, // iOS and Android
+                    preferFrontCamera : settingData.preferFrontCamera, // iOS and Android
                     showFlipCameraButton : true, // iOS and Android
                     showTorchButton : true, // iOS and Android
-                    torchOn: false, // Android, launch with the torch switched on (if available)
+                    torchOn: settingData.torchOn, // Android, launch with the torch switched on (if available)
                     // prompt : "Place a barcode inside the scan area", // Android
                     // resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
                     // formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
                     // orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-                    disableAnimations : true, // iOS
-                    disableSuccessBeep: false // iOS
+                    disableAnimations : settingData.disableAnimations, // iOS
+                    disableSuccessBeep: settingData.disableSuccessBeep // iOS
                 }
            );
     };
@@ -97,7 +100,7 @@ angular.module('starter.controllers', [])
     $scope.remove = function(id) {
       //$scope.chats.remove(chat);
       console.log(id);
-      var id = id - 1;
+      var id = id;
       $scope.chats.splice(id, 1);
       localStorage.setItem("LocalData", JSON.stringify($scope.chats));
 
@@ -131,7 +134,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SettingsCtrl', function($scope) {
-  if(localStorage.getItem("SettingData") != null) {
+  //if(localStorage.getItem("SettingData") != null) {
       var settings = [];
       settings = JSON.parse(localStorage.getItem("SettingData"));
       $scope.settings = {
@@ -140,5 +143,5 @@ angular.module('starter.controllers', [])
           torchOn: settings.torchOn,
           preferFrontCamera: settings.preferFrontCamera
       };
-  }
+  //}
 });
