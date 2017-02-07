@@ -40,9 +40,9 @@
   <script>
     function onDocLoad() {
         if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-            //document.addEventListener('deviceready', initApp, false);
+            document.addEventListener('deviceready', initApp, false);
         } else {
-            //initApp();
+            initApp();
         }
     }
     
@@ -58,12 +58,12 @@
         if ( window.plugins && window.plugins.AdMob ) {
           var ad_units = {
         ios : {
-          banner: 'ca-app-pub-9547390959473673/4251435942',
-          interstitial: 'ca-app-pub-9547390959473673/4251435942'
+          banner: 'ca-app-pub-9547390959473673/4414795541',
+          interstitial: 'ca-app-pub-9547390959473673/4414795541'
         },
         android : {
-          banner: 'ca-app-pub-9547390959473673/6210153946',
-          interstitial: 'ca-app-pub-9547390959473673/6210153946'
+          banner: 'ca-app-pub-9547390959473673/7507862741',
+          interstitial: 'ca-app-pub-9547390959473673/7507862741'
         }
           };
           var admobid = "";
