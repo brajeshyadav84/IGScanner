@@ -183,6 +183,12 @@ h1 {
     text-transform: capitalize;
 }
 
+.company-name {
+    text-align: center;
+    color: gray;
+    padding-top: 80px;
+    text-transform: none;
+}
 
 
 
