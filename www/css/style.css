@@ -134,7 +134,6 @@ h1 {
     text-align: -webkit-center;
 }
 
-}
 
 .btn-holder{
     width: 45%;
@@ -186,8 +185,13 @@ h1 {
 .company-name {
     text-align: center;
     color: gray;
-    padding-top: 80px;
+    padding-top: 60px;
     text-transform: none;
+}
+
+.how-use{
+    padding-top: 40px;
+    color: gray;
 }
 
 
