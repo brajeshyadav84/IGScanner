@@ -1,0 +1,19 @@
+<ion-view view-title="Scan QR or Barcode">
+  <ion-content class="padding center-align">
+    <div class="scan-container" ng-click="scan()" ng-show="isScan">
+        
+    </div>
+
+    <div ng-show="!isScan" class="detail-container">
+        <p class="wraptext" style="text-transform: lowercase;">{{scanURL}}</p>
+        <div class="detail-sub-container">
+            <div class="btn-holder" ng-click="openURL()">Open URL</div>
+            <div class="btn-holder" ng-click="shareURL()">Share URL</div>
+        </div>
+        <div class="detail-scan-container">
+            <div class="btn-holder" ng-click="scan()">Scan</div>
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>

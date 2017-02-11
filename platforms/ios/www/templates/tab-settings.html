@@ -1,0 +1,18 @@
+<ion-view view-title="settings">
+  <ion-content class="capitalize-text">
+    <ion-list>
+    <ion-toggle  ng-model="settings.disableSuccessBeep" ng-change="settingHandler()">
+        Beep
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.disableAnimations" ng-change="settingHandler()">
+        Animations
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.torchOn" ng-change="settingHandler()">
+        Torch On
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.preferFrontCamera" ng-change="settingHandler()">
+        Prefer Front Camera
+    </ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view>
