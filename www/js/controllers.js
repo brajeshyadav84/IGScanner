@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
                 function (result) {
                     if(!result.cancelled)
                     {
-                        console.log("result.format :: "+ result.format);
+                        //console.log("result.format :: "+ result.format);
                         //if(result.format == "QR_CODE")
                         //{
                             navigator.notification.prompt("Please enter name of data",  function(input){
@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
                                 var details = result.text;
 
                                 var data = localStorage.getItem("LocalData");
-                                console.log(data);
+                                //console.log(data);
                                 data = JSON.parse(data);
                                 var id = data.length;
                                 if(id > 20){
@@ -95,7 +95,7 @@ angular.module('starter.controllers', [])
   //});
     $scope.chats = JSON.parse(localStorage.getItem("LocalData"));
     if($scope.chats.length > 0) {
-        console.log("$scope.chats :: "+$scope.chats);
+        //console.log("$scope.chats :: "+$scope.chats);
         $scope.isDataAvailable = false;
     } else {
         $scope.isDataAvailable = true;
@@ -104,7 +104,7 @@ angular.module('starter.controllers', [])
     
     $scope.remove = function(id) {
       //$scope.chats.remove(chat);
-      console.log(id);
+      //console.log(id);
       var id = id;
       $scope.chats.splice(id, 1);
       localStorage.setItem("LocalData", JSON.stringify($scope.chats));
@@ -120,7 +120,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HistoryDetailCtrl', function($scope, $stateParams, $cordovaSocialSharing) {
-  console.log($stateParams.name);
+  //console.log($stateParams.name);
   //$scope.chat = Chats.get();
   $scope.name = $stateParams.name;
   if($scope.name == "Product") {
