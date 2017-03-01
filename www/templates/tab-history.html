@@ -1,6 +1,7 @@
 <ion-view view-title="History" cache-view="false">
   <ion-content>
     <ion-list>
+    <div style="display: flex;flex-direction: column-reverse;">
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="data in chats" type="item-text-wrap">
         <div ng-click="detailsHandler(data)">
           <h2 style="text-transform: capitalize;">{{data.name}}</h2>
@@ -11,6 +12,7 @@
           Delete
         </ion-option-button>
       </ion-item>
+    </div>
     </ion-list>
     <div class="noData" ng-show="isDataAvailable">
         No Data History
