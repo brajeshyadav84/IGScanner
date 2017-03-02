@@ -1,19 +1,21 @@
 <ion-view view-title="Scan QR or Barcode" cache-view="false">
   <ion-content class="padding center-align">
-    <div class="scan-container" ng-click="scan()" ng-show="isScan">
-        Click to Scan
-    </div>
-
+    
     <div ng-show="!isScan" class="detail-container">
         <p class="wraptext" style="text-transform: lowercase;">{{scanURL}}</p>
         <div class="detail-sub-container">
             <div class="btn-holder" ng-click="openURL()">Open URL</div>
             <div class="btn-holder" ng-click="shareURL()"><i class="ion-android-share-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp; Share URL</div>
         </div>
-        <div class="detail-scan-container">
-            <div class="btn-holder" ng-click="scan()">Scan QR/barcode</div>
-        </div>
+        <!-- <div class="detail-scan-container">
+            <div class="btn-holder" ng-click="scan()">Scan</div>
+        </div> -->
     </div>
+
+    <div class="scan-container" ng-click="scan()">
+        Click to Scan
+    </div>
+
   </ion-content>
   <div ng-click="onClickPromote()" class="promotion-icon">
         <i class="ion-android-share-alt icon-share"></i>

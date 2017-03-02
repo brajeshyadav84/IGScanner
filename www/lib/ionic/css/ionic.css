@@ -3397,7 +3397,9 @@ body.grade-c {
   -moz-text-size-adjust: none;
   text-size-adjust: none;
   -webkit-transform-origin: left top;
-  transform-origin: left top; }
+  transform-origin: left top; 
+  width: 100%;
+}
 
 /**
  * Set ms-viewport to prevent MS "page squish" and allow fluid scrolling
