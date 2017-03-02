@@ -83,7 +83,7 @@ angular.module('starter.controllers', [])
     };
 
     $scope.onClickPromote = function(){
-        $cordovaSocialSharing.share('QR or barcode scanner - ', 'IGScanner', null, "http://www.interviewgully.com/appLauncher");
+        $cordovaSocialSharing.share('QR or barcode scanner - ', 'IGScanner', null, "http://www.interviewgully.com/scannerLauncher");
     };
 
 
