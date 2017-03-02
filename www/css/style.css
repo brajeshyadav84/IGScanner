@@ -195,5 +195,30 @@ h1 {
     padding-left: 15px;
 }
 
+.promotion-icon {
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: inline-block;
+    height: 56px;
+    outline: none;
+    position: fixed;
+    text-align: center;
+    width: 56px;
+    transform: rotateY(0deg);
+    bottom: 116px;
+    right: 16px;
+    background-size: 30px 21px;
+    background-color: #0072FF;
+    z-index: 11;
+    padding-top: 7px;
+}
+
+.icon-share {
+    font-size: 40px;
+    color: orange;
+}
+
 
 
