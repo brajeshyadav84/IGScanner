@@ -1,4 +1,4 @@
-<ion-view view-title="Scan QR or Barcode">
+<ion-view view-title="Scan QR or Barcode" cache-view="false">
   <ion-content class="padding center-align">
     <div class="scan-container" ng-click="scan()" ng-show="isScan">
         Click to Scan
@@ -11,7 +11,7 @@
             <div class="btn-holder" ng-click="shareURL()"><i class="ion-android-share-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp; Share URL</div>
         </div>
         <div class="detail-scan-container">
-            <div class="btn-holder" ng-click="scan()">Scan QR</div>
+            <div class="btn-holder" ng-click="scan()">Scan QR/barcode</div>
         </div>
     </div>
 
