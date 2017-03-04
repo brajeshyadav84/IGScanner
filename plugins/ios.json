@@ -85,6 +85,10 @@
         },
         "cordova-plugin-admob": {
             "PACKAGE_NAME": "com.ionicframework.igscanner322559"
+        },
+        "cordova-plugin-customurlscheme": {
+            "URL_SCHEME": "com.ionicframework.igscanner322559",
+            "PACKAGE_NAME": "com.ionicframework.igscanner322559"
         }
     },
     "dependent_plugins": {
