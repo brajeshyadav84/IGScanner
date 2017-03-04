@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
                         //if(result.format == "QR_CODE")
                         //{
                             navigator.notification.prompt("Please enter name of data",  function(input){
-                                var name = input.input1;
+                                var name = (input.input1 == "")? "URL" : input.input1;
                                 if(result.format != "QR_CODE") {
                                     name = "Product"
                                 }
@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
                                 //console.log(data);
                                 data = JSON.parse(data);
                                 var id = data.length;
-                                if(id > 20){
+                                if(id > 40){
                                   data.splice(0, 1);
                                 }
                                 data[data.length] = { id, name, details};
@@ -83,7 +83,7 @@ angular.module('starter.controllers', [])
     };
 
     $scope.onClickPromote = function(){
-        $cordovaSocialSharing.share('QR or barcode scanner - ', 'IGScanner', null, "http://www.interviewgully.com/scannerLauncher");
+        $cordovaSocialSharing.share('Download QR or barcode scanner - ', 'IGScanner', null, "http://www.interviewgully.com/scannerLauncher");
     };
 
 
