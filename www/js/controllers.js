@@ -50,7 +50,13 @@ angular.module('starter.controllers', [])
 
                                 localStorage.setItem("LocalData", JSON.stringify(data));
                                 $scope.isScan = false;
-                                $scope.scanURL = result.text;
+                                if(name == "Product") {
+                                    $scope.btnText = "Web Search";
+                                    $scope.scanURL = "https://www.google.co.in/#q="+result.text;
+                                } else {
+                                    $scope.btnText = "Open URL";
+                                    $scope.scanURL = result.text;
+                                }
                                 $scope.$apply();
                             });
                         //}
